@@ -17,3 +17,25 @@ lightly
 *********
 
 https://github.com/jameschapman19/lightly
+
+
+
+License
+----------
+
+SSL-EY is released under the MIT License, allowing commercial use. See LICENSE for details.
+
+
+Citation
+---------
+
+If you find this repository useful, please consider giving a star :star: and citation:
+
+@inproceedings{
+chapman2023cca,
+title={{CCA} with Shared Weights for Self-Supervised Learning},
+author={James Chapman and Lennie Wells},
+booktitle={NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice},
+year={2023},
+url={https://openreview.net/forum?id=7rYseRZ7Z3}
+}
