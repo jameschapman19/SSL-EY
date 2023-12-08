@@ -1,6 +1,9 @@
 # SSL-EY: Maximizing Correlation in Self-Supervised Learning
 
-This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), as detailed in the paper SSL-EY: Self-Supervised Learning with Eckhart-Young Characterization by James Chapman and Lennie Wells, presented at NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice.
+This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), as detailed in
+
+- [CCA with Shared Weights for Self-Supervised Learning](https://openreview.net/forum?id=7rYseRZ7Z3), presented at [NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice](https://neurips.cc/virtual/2023/80864)
+- [Efficient Algorithms for the CCA Family: Unconstrained Objectives with Unbiased Gradients](https://arxiv.org/abs/2310.01012)
 
 <p align="center">
   <img src="schematic.svg" alt="Schematic">
