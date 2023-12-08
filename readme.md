@@ -7,8 +7,11 @@
 [![downloads](https://img.shields.io/badge/Arxiv-2310.01012-red?logo=arxiv&logoColor=red)](https://pypi.org/project/fusilli/)
 
 </div>
+SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization) is a novel approach to self-supervised learning in AI based on Canonical Correlation Analysis.
 
-This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), as detailed in
+This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), featuring a simplified design inspired by the [VICReg](https://github.com/facebookresearch/vicreg/blob/main/README.md) repository.
+
+The work is featured in:
 
 - [CCA with Shared Weights for Self-Supervised Learning](https://openreview.net/forum?id=7rYseRZ7Z3), presented at [NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice](https://neurips.cc/virtual/2023/80864)
 - [Efficient Algorithms for the CCA Family: Unconstrained Objectives with Unbiased Gradients](https://arxiv.org/abs/2310.01012)
@@ -17,19 +20,23 @@ This repository hosts the official PyTorch implementation of SSL-EY (Self-Superv
   <img src="schematic.svg" alt="Schematic">
 </p>
 
-This repo provides a simplified PyTorch implementation designed around the [VICReg](https://github.com/facebookresearch/vicreg/blob/main/README.md) repository.
+## Training
+
+Install [PyTorch](http://pytorch.org) and plug our loss in 🔌. 
+
+Download [ImageNet](https://imagenet.stanford.edu/) and follow instructions on [VICReg](https://github.com/facebookresearch/vicreg) for distributed training scripts.
 
 ## Other Implementations
 
-Our loss function plugs into public SSL software pipelines and all of the results in the paper were produced from our public fork of solo-learn.
+Our loss function also slots into public SSL software pipelines.the results in our papers were produced from our public fork of solo-learn.
 
 ### solo-learn
 
-Access our solo-learn fork [here](https://github.com/jameschapman19/solo-learn)
+The results in our papers were produced from our [public fork of solo-learn](https://github.com/jameschapman19/solo-learn).
 
 ### lightly
 
-Access our solo-learn fork [here](https://github.com/jameschapman19/lightly)
+We also set up SSL-EY in our [lightly fork](https://github.com/jameschapman19/lightly)
 
 ## Pre-trained Models
 
@@ -68,10 +75,6 @@ You can choose to download only the weights of the pretrained backbone used for 
 ## Pretrained models on PyTorch Hub
 
 Work in progress
-
-## Training
-
-Follow instructions on [VICReg](https://github.com/facebookresearch/vicreg)
 
 ## License
 
