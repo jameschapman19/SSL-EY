@@ -9,9 +9,9 @@ This repository hosts the official PyTorch implementation of SSL-EY (Self-Superv
   <img src="schematic.svg" alt="Schematic">
 </p>
 
-This code is designed to match the [VICReg](https://github.com/facebookresearch/vicreg/blob/main/README.md) repository.
+This repo provides a simplified PyTorch implementation designed around the [VICReg](https://github.com/facebookresearch/vicreg/blob/main/README.md) repository.
 
-## Public Benchmarks
+## Other Implementations
 
 Our loss function plugs into public SSL software pipelines and all of the results in the paper were produced from our public fork of solo-learn.
 
