@@ -6,7 +6,7 @@ This repository hosts the official PyTorch implementation of SSL-EY (Self-Superv
 Public Benchmarks
 --------------------
 
-Our loss function plugs into public SSL software pipelines.
+Our loss function plugs into public SSL software pipelines and all of the results in the paper were produced from our public fork of solo-learn.
 
 solo-learn
 ***********
