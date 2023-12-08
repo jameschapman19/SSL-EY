@@ -52,14 +52,6 @@ def get_arguments():
     parser.add_argument("--wd", type=float, default=1e-6,
                         help='Weight decay')
 
-    # Loss
-    parser.add_argument("--sim-coeff", type=float, default=25.0,
-                        help='Invariance regularization loss coefficient')
-    parser.add_argument("--std-coeff", type=float, default=25.0,
-                        help='Variance regularization loss coefficient')
-    parser.add_argument("--cov-coeff", type=float, default=1.0,
-                        help='Covariance regularization loss coefficient')
-
     # Running
     parser.add_argument("--num-workers", type=int, default=10)
     parser.add_argument('--device', default='cuda',
@@ -179,7 +171,7 @@ def adjust_learning_rate(args, optimizer, loader, step):
     return lr
 
 
-class VICReg(nn.Module):
+class SSLEY(nn.Module):
     def __init__(self, args):
         super().__init__()
         self.args = args
@@ -219,12 +211,6 @@ def Projector(args, embedding):
 
 def exclude_bias_and_norm(p):
     return p.ndim == 1
-
-
-def off_diagonal(x):
-    n, m = x.shape
-    assert n == m
-    return x.flatten()[:-1].view(n - 1, n + 1)[:, 1:].flatten()
 
 
 class LARS(optim.Optimizer):

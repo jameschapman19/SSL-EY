@@ -1,4 +1,12 @@
+<div align="center">
+
 # SSL-EY: Maximizing Correlation in Self-Supervised Learning
+
+**💃It's pronounced "Slay"💃**
+
+[![downloads](https://img.shields.io/badge/Arxiv-2310.01012-red?logo=arxiv&logoColor=red)](https://pypi.org/project/fusilli/)
+
+</div>
 
 This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), as detailed in
 
@@ -73,6 +81,15 @@ SSL-EY is released under the MIT License, allowing commercial use. See LICENSE f
 ## Citation
 
 If you find this repository useful, please consider giving a star ⭐ and citation:
+
+@misc{chapman2023efficient,
+      title={Efficient Algorithms for the CCA Family: Unconstrained Objectives with Unbiased Gradients}, 
+      author={James Chapman and Lennie Wells and Ana Lawry Aguila},
+      year={2023},
+      eprint={2310.01012},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 
 @inproceedings{
 chapman2023cca,
