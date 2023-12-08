@@ -2,7 +2,7 @@
 
 # SSL-EY: Maximizing Correlation in Self-Supervised Learning
 
-**💃It's pronounced "Slay"💃**
+**🔥💃It's. pronounced. "Slay".🕺🔥**
 
 [![downloads](https://img.shields.io/badge/Arxiv-2310.01012-red?logo=arxiv&logoColor=red)](https://pypi.org/project/fusilli/)
 
