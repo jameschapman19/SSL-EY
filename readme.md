@@ -1,33 +1,31 @@
-SSL-EY: Maximizing Correlation in Self-Supervised Learning
-===========================================================
+# SSL-EY: Maximizing Correlation in Self-Supervised Learning
 
 This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), as detailed in the paper SSL-EY: Self-Supervised Learning with Eckhart-Young Characterization by James Chapman and Lennie Wells, presented at NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice.
 
-Public Benchmarks
---------------------
+<p align="center">
+  <img src="schematic.pdf" alt="Schematic">
+</p>
+
+This code is designed to match the [VICReg](https://github.com/facebookresearch/vicreg/blob/main/README.md) repository.
+
+## Public Benchmarks
 
 Our loss function plugs into public SSL software pipelines and all of the results in the paper were produced from our public fork of solo-learn.
 
-solo-learn
-***********
+### solo-learn
 
-https://github.com/jameschapman19/solo-learn
+Access our solo-learn fork [here](https://github.com/jameschapman19/solo-learn)
 
-lightly
-*********
+### lightly
 
-https://github.com/jameschapman19/lightly
+Access our solo-learn fork [here](https://github.com/jameschapman19/lightly)
 
-
-
-License
-----------
+## License
 
 SSL-EY is released under the MIT License, allowing commercial use. See LICENSE for details.
 
 
-Citation
----------
+## Citation
 
 If you find this repository useful, please consider giving a star :star: and citation:
 
