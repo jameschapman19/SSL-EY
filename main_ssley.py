@@ -1,8 +1,24 @@
-# Copyright (c) Meta Platforms, Inc. and affiliates.
-# All rights reserved.
-
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
+# MIT License
+#
+# Copyright (c) Facebook, Inc. and its affiliates.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 
 import argparse
@@ -21,6 +37,7 @@ from distributed import init_distributed_mode
 from torch import nn, optim
 
 import augmentations as aug
+from ssley import SSLEY
 
 
 def get_arguments():
@@ -93,7 +110,7 @@ def main(args):
         sampler=sampler,
     )
 
-    model = VICReg(args).cuda(gpu)
+    model = SSLEY(args).cuda(gpu)
     model = nn.SyncBatchNorm.convert_sync_batchnorm(model)
     model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[gpu])
     optimizer = LARS(
@@ -169,33 +186,6 @@ def adjust_learning_rate(args, optimizer, loader, step):
     for param_group in optimizer.param_groups:
         param_group["lr"] = lr
     return lr
-
-
-class SSLEY(nn.Module):
-    def __init__(self, args):
-        super().__init__()
-        self.args = args
-        self.num_features = int(args.mlp.split("-")[-1])
-        self.backbone, self.embedding = resnet.__dict__[args.arch](
-            zero_init_residual=True
-        )
-        self.projector = Projector(args, self.embedding)
-
-    def forward(self, x, y):
-        x = self.projector(self.backbone(x))
-        y = self.projector(self.backbone(y))
-
-        x = torch.cat(FullGatherLayer.apply(x), dim=0)
-        y = torch.cat(FullGatherLayer.apply(y), dim=0)
-        x = x - x.mean(dim=0)
-        y = y - y.mean(dim=0)
-
-        C = 2*(x.T @ y) / (self.args.batch_size - 1)
-        V = (x.T @ x) / (self.args.batch_size - 1) + (y.T @ y) / (self.args.batch_size - 1)
-
-        loss = -2*torch.trace(C)+torch.trace(V@V)
-        return loss
-
 
 def Projector(args, embedding):
     mlp_spec = f"{embedding}-{args.mlp}"
