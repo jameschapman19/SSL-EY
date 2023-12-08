@@ -3,7 +3,7 @@
 This repository hosts the official PyTorch implementation of SSL-EY (Self-Supervised Learning with an Eckhart-Young characterization), as detailed in the paper SSL-EY: Self-Supervised Learning with Eckhart-Young Characterization by James Chapman and Lennie Wells, presented at NeurIPS 2023 Workshop: Self-Supervised Learning - Theory and Practice.
 
 <p align="center">
-  <img src="schematic.pdf" alt="Schematic">
+  <img src="schematic.svg" alt="Schematic">
 </p>
 
 This code is designed to match the [VICReg](https://github.com/facebookresearch/vicreg/blob/main/README.md) repository.
@@ -27,7 +27,7 @@ SSL-EY is released under the MIT License, allowing commercial use. See LICENSE f
 
 ## Citation
 
-If you find this repository useful, please consider giving a star :star: and citation:
+If you find this repository useful, please consider giving a star ⭐ and citation:
 
 @inproceedings{
 chapman2023cca,
