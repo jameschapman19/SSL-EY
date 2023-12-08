@@ -23,6 +23,48 @@ Access our solo-learn fork [here](https://github.com/jameschapman19/solo-learn)
 
 Access our solo-learn fork [here](https://github.com/jameschapman19/lightly)
 
+## Pre-trained Models
+
+You can choose to download only the weights of the pretrained backbone used for downstream tasks, or the full checkpoint which contains backbone and projection head weights.
+
+<table>
+  <tr>
+    <th>arch</th>
+    <th>params</th>
+    <th>accuracy</th>
+    <th colspan="6">download</th>
+  </tr>
+  <tr>
+    <td>ResNet-50</td>
+    <td>23M</td>
+    <td>Work in Progress</td>
+    <td>Work in Progress</td>
+    <td>Work in Progress</td>
+  </tr>
+  <tr>
+    <td>ResNet-50 (x2)</td>
+    <td>93M</td>
+    <td>75.5%</td>
+    <td>Work in Progress</td>
+    <td>Work in Progress</td>
+  </tr>
+  <tr>
+    <td>ResNet-200 (x2)</td>
+    <td>250M</td>
+    <td>77.3%</td>
+    <td>Work in Progress</td>
+    <td>Work in Progress</td>
+  </tr>
+</table>
+
+## Pretrained models on PyTorch Hub
+
+Work in progress
+
+## Training
+
+Follow instructions on [VICReg](https://github.com/facebookresearch/vicreg)
+
 ## License
 
 SSL-EY is released under the MIT License, allowing commercial use. See LICENSE for details.
