@@ -201,7 +201,7 @@ class VICReg(nn.Module):
         C = 2*(x.T @ y) / (self.args.batch_size - 1)
         V = (x.T @ x) / (self.args.batch_size - 1) + (y.T @ y) / (self.args.batch_size - 1)
 
-        loss = torch.trace(C)-torch.trace(V@V)
+        loss = -2*torch.trace(C)+torch.trace(V@V)
         return loss
 
 
